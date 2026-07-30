@@ -1,0 +1,13 @@
+{
+  "name": "カコモと学ぶ 加古川市 決算チャレンジ",
+  "short_name": "決算チャレンジ",
+  "description": "加古川市の令和6年度決算982億円を、あなたが預かって削ってみる市民向けシミュレーション。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#D8E8F5",
+  "theme_color": "#1B5FA8",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
