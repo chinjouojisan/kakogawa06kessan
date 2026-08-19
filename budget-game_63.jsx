@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>カコモと学ぶ 加古川市 決算チャレンジ｜削ってわかる、予算編成の手ごわさ</title>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="manifest.json">
-
-<meta name="description" content="加古川市の令和6年度決算982億円を、あなたが預かって削ってみる市民向けシミュレーション。クイズ100問つき。非公式。">
-<meta property="og:title" content="カコモと学ぶ 加古川市 決算チャレンジ">
-<meta property="og:description" content="982億円を、あなたならどう削る？削ってわかる、予算編成の手ごわさ。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://chinjouojisan.github.io/kakogawa06kessan/">
-<meta property="og:image" content="https://chinjouojisan.github.io/kakogawa06kessan/ogp.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chinjouojisan.github.io/kakogawa06kessan/ogp.jpg">
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  html,body{margin:0;padding:0;background:#D8E8F5}
-  #loading{position:fixed;inset:0;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;
-    font-family:sans-serif;color:#1B5FA8;background:#D8E8F5;z-index:9999;text-align:center;padding:20px}
-  #loading small{color:#767676;font-size:12px}
-</style>
-</head>
-<body>
-<div id="loading">
-  <div style="font-weight:700">カコモと学ぶ 加古川市 決算チャレンジ</div>
-  <small>読み込んでいます。初回は少し時間がかかります…</small>
-</div>
-<div id="root"></div>
-<script type="text/babel" data-presets="react">
-const { useState, useMemo, useEffect, useRef } = React;
+import React, { useState, useMemo, useEffect } from "react";
 
 /* ============================================================
    データ：加古川市 令和6年度 一般会計歳出決算（目的別・億円）
@@ -4289,7 +4251,7 @@ function Hanko({ label, show }) {
 // 呼び出し側でこれを超えるcap（100）を渡して全額まで動かせるようにする。
 const MAX_ITEM_PERCENT_DEFAULT = 50;
 
-function BudgetGame() {
+export default function BudgetGame() {
   const [step, setStep] = useState(0);
   // ページ（STEP）が変わったら、必ず画面の先頭に戻す
   useEffect(() => {
@@ -7206,12 +7168,3 @@ function Step7({ checklistCutByCategory, itemPercents, reasons, difficulty }) {
     </Card>
   );
 }
-
-
-const _root = ReactDOM.createRoot(document.getElementById("root"));
-_root.render(<BudgetGame />);
-const _l = document.getElementById("loading");
-if (_l) _l.style.display = "none";
-</script>
-</body>
-</html>
