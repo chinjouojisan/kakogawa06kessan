@@ -4684,6 +4684,15 @@ function Step0Quiz({ onNext, started, onStart }) {
         <p className="font-body text-[10px] mt-2 text-center" style={{ color: "#767676" }}>
           どちらを選んでも、あとから戻れます
         </p>
+        <a
+          href="https://chinjouojisan.github.io/kakogawagikaimap01/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-body block text-center text-[11px] underline mt-3"
+          style={{ color: "#1B5FA8" }}
+        >
+          加古川市議会マップ（まとめサイト）で他のサイトも見る
+        </a>
 
       </Card>
     );
@@ -7202,6 +7211,15 @@ function Step7({ checklistCutByCategory, itemPercents, reasons, difficulty }) {
       >
         議員通信簿を見る →
       </a>
+      <a
+        href="https://chinjouojisan.github.io/kakogawagikaimap01/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-body block text-center w-full py-3 mt-2 rounded-sm text-[14px] border"
+        style={{ borderColor: "#1B5FA8", color: "#1B5FA8", background: "#FFFFFF" }}
+      >
+        加古川市議会マップ（まとめサイト）で他のサイトも見る
+      </a>
       <SourceNote />
     </Card>
   );
@@ -7212,6 +7230,13 @@ const _root = ReactDOM.createRoot(document.getElementById("root"));
 _root.render(<BudgetGame />);
 const _l = document.getElementById("loading");
 if (_l) _l.style.display = "none";
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  });
+}
 </script>
 </body>
 </html>
